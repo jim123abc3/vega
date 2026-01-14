@@ -1,0 +1,2 @@
+export const DEFAULT_PORTFOLIO_AS_OF = "2023-01-01";
+export const DEFAULT_HISTORY_FROM = "2022-01-01";
