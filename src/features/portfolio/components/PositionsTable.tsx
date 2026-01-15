@@ -83,7 +83,7 @@ export function PositionsTable({
                   {formatCurrency(row.price)}
                 </td>
                 <td className="px-3 py-2 text-right">
-                  {formatCurrency(row.price)}
+                  {formatCurrency(row.price * row.quantity)}
                 </td>
                 <td className="px-3 py-2 text-right">{pct.toFixed(1)}%</td>
               </tr>
