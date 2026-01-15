@@ -46,9 +46,9 @@ export function PortfolioDashboard() {
       : buildDonutByClass(assets, snapshot, prices);
 
   return (
-    <div className="space-y-4">
-      <div className="flex flex-col md:flex-row gap-4">
-        <section className="flex-1 min-h-64 bg-(--color-surface) rounded-lg p-4 border border-(--color-border)">
+    <div className="space-y-4 max-w-7xl mx-auto">
+      <div className="flex flex-col lg:flex-row gap-4">
+        <section className="flex-1 bg-(--color-surface) rounded-lg p-4 border border-(--color-border)">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-sm font-semibold">Portfolio balance</h2>
             <div className="inline-flex rounded bg-(--color-surface-alt) border border-(--color-border) text-xs">
@@ -80,20 +80,19 @@ export function PortfolioDashboard() {
           />
         </section>
 
-        <section className="flex-1 min-h-64 bg-(--color-surface) rounded-lg p-4 border border-(--color-border)">
+        <section className="flex-1 bg-(--color-surface) rounded-lg p-4 border border-(--color-border)">
           <h2 className="text-sm font-semibold mb-2">Positions</h2>
           <PositionsTable
             assets={assets}
             snapshot={snapshot}
             prices={prices}
             highlightLabel={selected}
-            viewMode={viewMode}
           />
         </section>
       </div>
 
       <section className="bg-(--color-surface) rounded-lg p-4 border border-(--color-border)">
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
           <h2 className="text-sm font-semibold">Historical portfolio value</h2>
           <div className="inline-flex rounded bg-(--color-surface-alt) border border-(--color-border) text-xs">
             {HISTORY_RANGES.map((range) => (
@@ -104,6 +103,8 @@ export function PortfolioDashboard() {
                   historyRange === range
                     ? "bg-(--color-primary) text-(--color-bg)"
                     : "hover:bg-(--color-border)"
+                } ${range === "1M" ? "rounded-l" : ""} ${
+                  range === "1Y" ? "rounded-r" : ""
                 }`}
               >
                 {range}

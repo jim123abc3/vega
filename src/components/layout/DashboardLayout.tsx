@@ -35,8 +35,8 @@ export function DashboardLayout({ children }: { children: ReactNode }) {
         </button>
       </aside>
 
-      <div className="flex-1 flex flex-col">
-        <header className="h-14 flex items-center justify-between px-4 border-b border-(--color-border) bg-(--color-surface)">
+      <div className="flex-1 flex flex-col min-w-0">
+        <header className="h-14 shrink-0 flex items-center justify-between px-4 border-b border-(--color-border) bg-(--color-surface)">
           <div className="md:hidden font-semibold text-(--color-primary)">
             Portfolio Dashboard
           </div>
@@ -49,7 +49,7 @@ export function DashboardLayout({ children }: { children: ReactNode }) {
             </button>
           </div>
         </header>
-        <main className="flex-1 p-4">{children}</main>
+        <main className="flex-1 p-4 overflow-y-auto">{children}</main>
       </div>
     </div>
   );
